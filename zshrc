@@ -31,7 +31,7 @@ ZSH_THEME="funky"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git compleat nyan npm web-search git-extras brew github hub osx ruby extract cap sublime bundler rvm composer)
+plugins=(git compleat nyan npm web-search git-extras brew github hub osx ruby extract cap bundler rvm composer vagrant)
 
 source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
@@ -48,11 +48,6 @@ PHP_ENV="development"
 export PHP_ENV
 
 alias kts="tmux ls | awk '{print $1}' | sed 's/://g' | xargs -I{} tmux kill-session -t {}"
-
-function tag() {
-    ~/.scripts/tag $@
-}
-
-function phpserv() {
-    php -S localhost:8000 $@
-}
+alias v="vagrant"
+alias tag="~/.scripts/tag"
+alias phpserv="php -S localhost:8000"

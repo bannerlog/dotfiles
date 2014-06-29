@@ -17,11 +17,11 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/syntastic'
-Bundle 'tomasr/molokai'
-Bundle 'lsdr/monokai'
 Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'robmiller/vim-movar'
+Bundle 'vim-scripts/BufOnly.vim'
+Bundle 'vim-scripts/ZoomWin'
 "Bundle 'flazz/vim-colorschemes'
 if executable('ctags')
     Bundle 'majutsushi/tagbar'
@@ -77,9 +77,12 @@ set showmatch
 set mat=3
 set ignorecase
 set smartcase
-set tags+=~/.vimtags,vendor.tags
 "nnoremap <leader>ll :set list!<CR>
 nnoremap <leader><space> :noh<cr>
+
+" tags 
+set tags+=~/.vimtags,vendor.tags
+nnoremap <leader>. :CtrlPTag<cr>
 
 set scrolljump=3
 set scrolloff=3
@@ -176,7 +179,7 @@ function! <sid>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
+au BufWrite *.php,*.js,*.feature,*.json,*.rb :call <sid>StripTrailingWhitespaces()
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 nnoremap <Leader>l :ls<CR>
