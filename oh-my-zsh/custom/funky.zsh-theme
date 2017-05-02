@@ -5,7 +5,7 @@ l33t_precmd() {
         echo -ne "\033]0;${REMOTE_IP}${USER}@${HOSTNAME}:${PWD/$HOME/~}\007"
 }
 
-add-zsh-hook precmd l33t_precmd
+precmd_functions+=(l33t_precmd)
 
 case `whoami` in
     bannerlog) cuser='' ;;
