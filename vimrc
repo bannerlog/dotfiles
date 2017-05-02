@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -80,7 +80,7 @@ set smartcase
 "nnoremap <leader>ll :set list!<CR>
 nnoremap <leader><space> :noh<cr>
 
-" tags 
+" tags
 set tags+=~/.vimtags,vendor.tags
 nnoremap <leader>. :CtrlPTag<cr>
 
